@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package com.ergou.my.mapper;
+package com.ergou.api.my.mapper.mapper;
 
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;
