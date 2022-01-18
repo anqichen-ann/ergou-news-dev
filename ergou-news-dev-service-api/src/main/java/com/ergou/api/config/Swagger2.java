@@ -26,7 +26,7 @@ public class Swagger2 {
     public Docket createRestApi() {
 //        Predicate<RequestHandler> adminPredicate = RequestHandlerSelectors.basePackage("com.imooc.admin.controller");
 //        Predicate<RequestHandler> articlePredicate = RequestHandlerSelectors.basePackage("com.imooc.article.controller");
-        Predicate<RequestHandler> userPredicate = RequestHandlerSelectors.basePackage("com.ergou.api.user.controller");
+        Predicate<RequestHandler> userPredicate = RequestHandlerSelectors.basePackage("com.ergou.user.controller");
 //        Predicate<RequestHandler> filesPredicate = RequestHandlerSelectors.basePackage("com.imooc.files.controller");
 
         return new Docket(DocumentationType.SWAGGER_2)  // 指定api类型为swagger2
@@ -49,4 +49,6 @@ public class Swagger2 {
                 .termsOfServiceUrl("https://www.ergou.com")     // 网站地址
                 .build();
     }
+
+
 }

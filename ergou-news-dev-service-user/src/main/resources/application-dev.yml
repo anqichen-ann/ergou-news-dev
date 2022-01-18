@@ -7,6 +7,13 @@
 server:
   port: 8013
 
+spring:
+  redis:
+    port: 6379
+    database: 0
+    password:
+    host: 127.0.0.1
+
 
 
 
