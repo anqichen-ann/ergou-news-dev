@@ -1,5 +1,8 @@
 package com.ergou.api.interceptor;
 
+import com.ergou.exception.GraceException;
+import com.ergou.exception.MyCustomException;
+import com.ergou.grace.result.ResponseStatusEnum;
 import com.ergou.utils.IPUtil;
 import com.ergou.utils.RedisOperator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +24,7 @@ public class PassportInterceptor implements HandlerInterceptor {
         String userIp = IPUtil.getRequestIp(request);
         boolean keyIsExist = redis.keyIsExist(SMS_CODE + ":" + userIp);
         if (keyIsExist) {
-            System.out.println("短信发送太频繁了！");
+            GraceException.display(ResponseStatusEnum.SMS_NEED_WAIT_ERROR);
             return false;
         }
         return true;
