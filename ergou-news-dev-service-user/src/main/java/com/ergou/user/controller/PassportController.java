@@ -14,10 +14,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.UUID;
 
 @RestController
 public class PassportController extends BaseController implements PassportControllerApi {
@@ -37,7 +41,10 @@ public class PassportController extends BaseController implements PassportContro
     }
 
     @Override
-    public GraceJSONResult login(LoginDto loginDto, BindingResult bindingResult) {
+    public GraceJSONResult login(LoginDto loginDto,
+                                 BindingResult bindingResult,
+                                 HttpServletRequest request,
+                                 HttpServletResponse response) throws UnsupportedEncodingException {
         if (bindingResult.hasErrors()) {
             Map<String, String> errors = getErrors(bindingResult);
             return GraceJSONResult.errorMap(errors);
@@ -55,6 +62,14 @@ public class PassportController extends BaseController implements PassportContro
         }
         if (Objects.isNull(user)) {
             user = userService.createUser(mobile);
+        }
+
+        if (!UserStatus.FROZEN.type.equals(user.getActiveStatus())) {
+            String uToken = UUID.randomUUID() + user.getId();
+            String uId = user.getId();
+            setCookie(response, "uToken", uToken,  MAX_AGE_OF_MONTH);
+            setCookie(response, "uId", uId, MAX_AGE_OF_MONTH);
+
         }
         return GraceJSONResult.ok(user);
     }

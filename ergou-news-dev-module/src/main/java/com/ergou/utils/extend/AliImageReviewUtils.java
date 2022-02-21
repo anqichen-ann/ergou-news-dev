@@ -12,7 +12,7 @@ import com.aliyuncs.http.MethodType;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
-import com.imooc.enums.ArticleReviewLevel;
+//import com.imooc.enums.ArticleReviewLevel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -109,7 +109,7 @@ public class AliImageReviewUtils {
                         System.out.println("scene = [" + scene + "]");
                         System.out.println("suggestion = [" + suggestion + "]");
 
-                        return suggestion.equalsIgnoreCase(ArticleReviewLevel.PASS.type) ? true : false;
+//                        return suggestion.equalsIgnoreCase(ArticleReviewLevel.PASS.type) ? true : false;
 //                        }
                     } else {
                         //单张图片处理失败, 原因视具体的情况详细分析

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 
@@ -27,6 +28,9 @@ public interface PassportControllerApi {
 
     @ApiOperation(value = "login", notes = "login", httpMethod = "POST")
     @PostMapping("/login")
-    GraceJSONResult login(@RequestBody @Valid LoginDto loginDto, BindingResult bindingResult) throws Exception;
+    GraceJSONResult login(@RequestBody @Valid LoginDto loginDto,
+                          BindingResult bindingResult,
+                          HttpServletRequest request,
+                          HttpServletResponse response) throws Exception;
 
 }
