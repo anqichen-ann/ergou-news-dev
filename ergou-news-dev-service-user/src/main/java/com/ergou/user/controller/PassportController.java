@@ -1,21 +1,29 @@
 package com.ergou.user.controller;
 
+import com.ergou.UserStatus;
 import com.ergou.api.BaseController;
 import com.ergou.api.user.PassportControllerApi;
 import com.ergou.grace.result.GraceJSONResult;
 import com.ergou.grace.result.ResponseStatusEnum;
+import com.ergou.pojo.AppUser;
 import com.ergou.request.LoginDto;
+import com.ergou.user.service.UserService;
 import com.ergou.utils.IPUtil;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 @RestController
 public class PassportController extends BaseController implements PassportControllerApi {
+
+    @Autowired
+    private UserService userService;
 
     @Override
     public GraceJSONResult getSMSCode(String mobile, HttpServletRequest request) throws Exception {
@@ -41,7 +49,14 @@ public class PassportController extends BaseController implements PassportContro
         if (StringUtils.isBlank(redisSMSCode) || !redisSMSCode.equals(smsCode)) {
             return GraceJSONResult.errorCustom(ResponseStatusEnum.SMS_CODE_ERROR);
         }
-        return GraceJSONResult.ok();
+        AppUser user = userService.queryMobileIfExist(mobile);
+        if (Objects.nonNull(user) && UserStatus.FROZEN.type.equals(user.getActiveStatus())) {
+            return GraceJSONResult.errorCustom(ResponseStatusEnum.USER_STATUS_ERROR);
+        }
+        if (Objects.isNull(user)) {
+            user = userService.createUser(mobile);
+        }
+        return GraceJSONResult.ok(user);
     }
 
     public Map<String, String> getErrors(BindingResult bindingResult) {
