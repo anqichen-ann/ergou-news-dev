@@ -62,3 +62,7 @@ mapper:
 pagehelper:
   helperDialect: mysql
   supportMethodsArguments: true
+
+
+website:
+  domain-path: ergouNews.com
