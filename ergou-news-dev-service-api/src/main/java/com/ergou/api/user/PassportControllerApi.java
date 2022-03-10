@@ -33,4 +33,10 @@ public interface PassportControllerApi {
                           HttpServletRequest request,
                           HttpServletResponse response) throws Exception;
 
+    @ApiOperation(value = "log out", notes = "log out", httpMethod = "GET")
+    @GetMapping("/logOut")
+    GraceJSONResult logOut(@RequestParam("userId") long userId,
+                          HttpServletRequest request,
+                          HttpServletResponse response) throws Exception;
+
 }

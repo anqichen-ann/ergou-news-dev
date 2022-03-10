@@ -69,9 +69,18 @@ public class PassportController extends BaseController implements PassportContro
             String uId = user.getId();
             setCookie(response, "uToken", uToken,  MAX_AGE_OF_MONTH);
             setCookie(response, "uId", uId, MAX_AGE_OF_MONTH);
+            redis.set(TOKEN + ":" + uId, uToken);
 
         }
         return GraceJSONResult.ok(user);
+    }
+
+    @Override
+    public GraceJSONResult logOut(long userId, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        setCookie(response, "uToken", "",  MAX_AGE_OF_DELETE);
+        setCookie(response, "uId", "", MAX_AGE_OF_DELETE);
+        redis.del(TOKEN + ":" + userId);
+        return GraceJSONResult.ok();
     }
 
     public Map<String, String> getErrors(BindingResult bindingResult) {

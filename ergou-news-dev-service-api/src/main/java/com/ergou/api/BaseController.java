@@ -22,8 +22,10 @@ public class BaseController {
     public String domain;
 
     public static final String SMS_CODE = "mobile:SMSCode";
+    public static final String TOKEN = "mobile:Token";
 
     public static Integer MAX_AGE_OF_MONTH = 30*24*60*60;
+    public static Integer MAX_AGE_OF_DELETE = 0;
 
     public void setCookie(HttpServletResponse response,
                           String cookieName,

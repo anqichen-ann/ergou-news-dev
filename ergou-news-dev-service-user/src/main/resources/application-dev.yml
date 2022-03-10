@@ -15,5 +15,10 @@ spring:
     host: 127.0.0.1
 
 
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
 
 
