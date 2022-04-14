@@ -1,6 +1,6 @@
 package com.ergou.utils;
 
-import sun.misc.BASE64Encoder;
+//import sun.misc.BASE64Encoder;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
@@ -85,8 +85,9 @@ public class FileUtils {
         }
 
         // 对字节数组Base64编码并且返回
-        BASE64Encoder encoder = new BASE64Encoder();
-        return encoder.encode(fileData);
+//        BASE64Encoder encoder = new BASE64Encoder();
+//        return encoder.encode(fileData);
+        return "";
     }
 
 }
