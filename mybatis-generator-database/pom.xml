@@ -67,6 +67,7 @@
 			<scope>compile</scope>
 			<optional>true</optional>
 		</dependency>
+
 	</dependencies>
 
 </project>
