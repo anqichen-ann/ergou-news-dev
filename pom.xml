@@ -12,6 +12,7 @@
         <module>ergou-news-dev-module</module>
         <module>ergou-news-dev-service-api</module>
         <module>ergou-news-dev-service-user</module>
+        <module>springCloud-eureka</module>
     </modules>
 
     <!--
