@@ -7,11 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mybatis-generator-database" />
         <module name="imooc-news-dev-common" />
-        <module name="springCloud-eureka" />
         <module name="ergou-news-dev-service-user" />
         <module name="ergou-news-dev-service-api" />
+        <module name="mybatis-generator-database" />
+        <module name="springCloud-eureka" />
+        <module name="ergou-news-dev-article" />
         <module name="ergou-news-dev-module" />
       </profile>
     </annotationProcessing>
@@ -22,6 +23,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ergou-news-dev" options="-parameters" />
+      <module name="ergou-news-dev-article" options="-parameters" />
       <module name="ergou-news-dev-common" options="-parameters" />
       <module name="ergou-news-dev-module" options="-parameters" />
       <module name="ergou-news-dev-service-api" options="-parameters" />

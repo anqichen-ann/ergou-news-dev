@@ -1,0 +1,37 @@
+############################################################
+#
+# 用户微服务
+# web访问端口号  约定：8003
+#
+############################################################
+server:
+    port: 8004
+
+############################################################
+#
+# 配置项目信息
+#
+############################################################
+spring:
+  profiles:
+    active: dev   # yml中配置文件的环境配置，dev：开发环境，test：测试环境，prod：生产环境
+  application:
+    name: service-article
+  datasource:                                         # 数据源的相关配置
+    type: com.zaxxer.hikari.HikariDataSource          # 数据源类型：HikariCP
+#    driver-class-name: com.mysql.jdbc.Driver          # mysql驱动
+    url: jdbc:mysql://localhost:3306/news?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+    username: root
+    password: password
+
+
+website:
+  domain-path: ergouNews.com
+
+eureka:
+  server:
+    hostname: localhost
+    port: 7700
+  client:
+    service-url:
+      defaultZone: http://${eureka.server.hostname}:${eureka.server.port}/eureka/
