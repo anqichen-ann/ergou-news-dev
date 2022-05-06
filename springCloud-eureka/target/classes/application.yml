@@ -5,7 +5,7 @@
 #
 ############################################################
 server:
-    port: 7700
+    port: ${port:7700}
 
 ############################################################
 #
@@ -18,11 +18,11 @@ spring:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: eureka-cluster-${server.port}
+  other-node-port1: ${port1:7701}
+  other-node-port2: ${port2:7702}
   client:
-    register-with-eureka: false
-    fetch-registry: false
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://eureka-cluster-${eureka.other-node-port1}:${eureka.other-node-port1}/eureka/,http://eureka-cluster-${eureka.other-node-port2}:${eureka.other-node-port2}/eureka/
 
 
