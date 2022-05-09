@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @EnableScheduling
 public class publishTask {
 
-    @Scheduled(cron = "0/3 * * * * ?")
+//    @Scheduled(cron = "0/3 * * * * ?")
     private void publish() {
         System.out.println("定时任务执行：" + LocalDateTime.now());
     }
