@@ -39,3 +39,13 @@ eureka:
 service-user:
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+#hystrix:
+#  command:
+#    default:
+#      fallback:
+#        enabled: true
+
+feign:
+  hystrix:
+    enabled: true

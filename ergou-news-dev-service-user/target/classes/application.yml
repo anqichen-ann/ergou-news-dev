@@ -83,3 +83,7 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 2000
+
+feign:
+  circuitbreaker:
+    enabled: true

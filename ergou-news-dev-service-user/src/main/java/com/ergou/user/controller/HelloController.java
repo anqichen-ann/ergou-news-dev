@@ -29,7 +29,7 @@ public class HelloController implements HelloControllerApi {
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         System.out.println("MyPort:" + port);
         return GraceJSONResult.ok("登录成功！");
