@@ -15,6 +15,7 @@
         <module>springCloud-eureka</module>
         <module>ergou-news-dev-article</module>
         <module>ergou-news-dev-zuul</module>
+        <module>spring-cloud-config</module>
     </modules>
 
     <!--
@@ -80,13 +81,13 @@
 
             <!--<dependency>-->
             <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-config-server</artifactId>-->
+            <!--<artifactId>spring-cloud-com.ergou.config.config-server</artifactId>-->
             <!--<version>2.2.2.RELEASE</version>-->
             <!--</dependency>-->
 
             <!--<dependency>-->
             <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-starter-config</artifactId>-->
+            <!--<artifactId>spring-cloud-starter-com.ergou.config.config</artifactId>-->
             <!--<version>2.2.2.RELEASE</version>-->
             <!--</dependency>-->
 

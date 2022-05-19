@@ -1,17 +1,15 @@
-package com.ergou.zuul;
+package com.ergou.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @SpringBootApplication(scanBasePackages = {"com.ergou"}, exclude = DataSourceAutoConfiguration.class)
-@EnableZuulProxy
 @EnableEurekaClient
-public class zuul {
+public class config {
 
     public static void main(String[] args) {
-        SpringApplication.run(zuul.class, args);
+        SpringApplication.run(config.class, args);
     }
 }

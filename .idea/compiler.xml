@@ -10,6 +10,7 @@
         <module name="imooc-news-dev-common" />
         <module name="ergou-news-dev-service-user" />
         <module name="ergou-news-dev-service-api" />
+        <module name="spring-cloud-config" />
         <module name="mybatis-generator-database" />
         <module name="springCloud-eureka" />
         <module name="ergou-news-dev-article" />
@@ -31,6 +32,7 @@
       <module name="ergou-news-dev-service-user" options="-parameters" />
       <module name="ergou-news-dev-zuul" options="-parameters" />
       <module name="imooc-news-dev-common" options="-parameters" />
+      <module name="spring-cloud-config" options="-parameters" />
       <module name="springCloud-eureka" options="-parameters" />
     </option>
   </component>

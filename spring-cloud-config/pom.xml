@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ergou-news-dev-zuul</artifactId>
+    <artifactId>spring-cloud-config</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -21,17 +21,14 @@
             <groupId>org.example</groupId>
             <artifactId>ergou-news-dev-service-api</artifactId>
             <version>1.0-SNAPSHOT</version>
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <groupId>org.springframework.cloud</groupId>-->
-<!--                    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
+            <!--            <exclusions>-->
+            <!--                <exclusion>-->
+            <!--                    <groupId>org.springframework.cloud</groupId>-->
+            <!--                    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
+            <!--                </exclusion>-->
+            <!--            </exclusions>-->
         </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
-        </dependency>
+
 
     </dependencies>
 

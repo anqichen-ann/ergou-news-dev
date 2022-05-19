@@ -5,7 +5,7 @@
 #
 ############################################################
 server:
-    port: 7070
+    port: 7080
 
 ############################################################
 #
@@ -14,7 +14,7 @@ server:
 ############################################################
 spring:
   application:
-    name: springCloud-zuul-server
+    name: spring-cloud-config
 
 eureka:
   server:
@@ -24,13 +24,5 @@ eureka:
     service-url:
       defaultZone: http://${eureka.server.hostname}:${eureka.server.port}/eureka/
 
-zuul:
-  routes:
-    service-article: /service-article/**
-#      path: /service-article/**
-#      service-id: service-article
-#      url: http://192.168.3.22:8004
-
-  prefix: /api
 
 
