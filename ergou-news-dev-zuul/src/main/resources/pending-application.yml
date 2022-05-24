@@ -5,7 +5,7 @@
 #
 ############################################################
 server:
-    port: 7080
+    port: 7070
 
 ############################################################
 #
@@ -14,12 +14,15 @@ server:
 ############################################################
 spring:
   application:
-    name: spring-cloud-config
+    name: springCloud-zuul-server
   cloud:
     config:
-      server:
-        git:
-          uri: https://github.com/anqichen-ann/spring-cloud-config.git
+      label: master
+      name: zuul
+      profile: dev
+      discovery:
+        enable: true
+        service-id: spring-cloud-config
 
 eureka:
   server:
@@ -29,5 +32,13 @@ eureka:
     service-url:
       defaultZone: http://${eureka.server.hostname}:${eureka.server.port}/eureka/
 
+zuul:
+  routes:
+    service-article: /service-article/**
+#      path: /service-article/**
+#      service-id: service-article
+#      url: http://192.168.3.22:8004
+
+  prefix: /api
 
 

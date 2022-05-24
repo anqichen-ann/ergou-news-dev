@@ -15,6 +15,14 @@ server:
 spring:
   application:
     name: springCloud-zuul-server
+  cloud:
+    config:
+      label: master
+      name: zuul
+      profile: prod
+      discovery:
+        enabled: true
+        service-id: spring-cloud-config
 
 eureka:
   server:
@@ -33,4 +41,9 @@ zuul:
 
   prefix: /api
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
 

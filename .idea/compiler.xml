@@ -24,7 +24,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="ergou-news-dev" options="-parameters" />
+      <module name="ergou-news-dev" options="" />
       <module name="ergou-news-dev-article" options="-parameters" />
       <module name="ergou-news-dev-common" options="-parameters" />
       <module name="ergou-news-dev-module" options="-parameters" />

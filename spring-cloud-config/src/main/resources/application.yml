@@ -15,6 +15,11 @@ server:
 spring:
   application:
     name: spring-cloud-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/anqichen-ann/spring-cloud-config.git
 
 eureka:
   server:
